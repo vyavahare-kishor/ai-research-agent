@@ -144,7 +144,7 @@ run_research_agent()
   │
   ├── build_research_prompt(topic, depth)
   │
-  ├── create_react_agent(llm=LLaMA3, tools=[TavilySearch])
+  ├── create_agent(llm=LLaMA3, tools=[TavilySearch])
   │
   └── agent.ainvoke(prompt)
         │
@@ -194,8 +194,8 @@ ai-research-agent/
 
 **ReAct agent with LangGraph**
 ```python
-# create_react_agent handles the full Think → Act → Observe loop
-agent = create_react_agent(
+# create_agent handles the full Think → Act → Observe loop
+agent = create_agent(
     model=llm,    # LLaMA 3 via Groq
     tools=tools   # [TavilySearch] — agent decides when to call this
 )
@@ -296,9 +296,9 @@ Part of an AI-native engineering portfolio — built while transitioning from Ru
 
 | Project | Description | Key concepts |
 |---------|-------------|--------------|
-| [**ai-native-journey**](https://github.com/yourusername/ai-native-journey) | FastAPI foundation — REST API + AI chat + SSE streaming | FastAPI, PostgreSQL, Groq |
-| [**ai-pr-reviewer**](https://github.com/yourusername/ai-pr-reviewer) | AI-powered GitHub PR code reviewer | GitHub API, structured LLM output |
-| [**ai-customer-support-bot**](https://github.com/yourusername/ai-customer-support-bot) | RAG pipeline — semantic search + grounded answers | pgvector, embeddings, RAG |
+| [**ai-native-journey**](https://github.com/vyavahare-kishor/ai-native-journey) | FastAPI foundation — REST API + AI chat + SSE streaming | FastAPI, PostgreSQL, Groq |
+| [**ai-pr-reviewer**](https://github.com/vyavahare-kishor/pr-code-reviewer) | AI-powered GitHub PR code reviewer | GitHub API, structured LLM output |
+| [**ai-customer-support-bot**](https://github.com/vyavahare-kishor/ai-customer-support-bot) | RAG pipeline — semantic search + grounded answers | pgvector, embeddings, RAG |
 | **ai-research-agent** (this) | Autonomous ReAct agent — self-directed research | LangGraph, tool use, agentic AI |
 
 ---

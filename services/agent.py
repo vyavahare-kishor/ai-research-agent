@@ -1,6 +1,6 @@
 from langchain_groq import ChatGroq
 from langchain_community.tools.tavily_search import TavilySearchResults
-from langgraph.prebuilt import create_react_agent
+from langchain.agents import create_agent
 from dotenv import load_dotenv
 from pathlib import Path
 from schemas.research import ResearchReport, Source
@@ -75,9 +75,7 @@ async def run_research_agent(topic: str, depth: str = "medium") -> ResearchRepor
 
     tools = get_tools(max_results=2)
 
-    # create_react_agent = modern LangGraph way
-    # replaces old AgentExecutor
-    agent = create_react_agent(
+    agent = create_agent(
         model=llm,
         tools=tools
     )
